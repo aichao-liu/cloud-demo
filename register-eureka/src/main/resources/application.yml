@@ -1,0 +1,15 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: register
+eureka:
+  client:
+    #表示是server，非client
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      #集群时，则defaultZone写多个url，用,分隔
+      defaultZone: http://localhost:8000/eureka/ #,http://localhost:9000/eureka/
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+server:
+  port: 8005
+spring:
+  application:
+    name: router-zuul
+zuul:
+  routes:
+    ribbon:
+      path: /ribbon/**
+      serviceId: consumer-ribbon
+    feign:
+      path: /feign/**
+      serviceId: consumer-feign
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

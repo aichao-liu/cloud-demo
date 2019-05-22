@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: provider
+  cloud:
+    config:
+      #指明远程仓库的分支
+      label: master
+      profile: dev
+      #指明配置服务中心的网址
+      uri: http://localhost:8888/
+      discovery:
+        enabled: true
+        #集群时通过service_id访问
+        service-id: cloud-config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
